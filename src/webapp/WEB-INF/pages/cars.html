@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <table border="1" width="900" style="border-collapse:collapse" align="center">
+            <thead>
+            <tr>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Series</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr th:each="lcar : ${car}">
+                    <td th:text="${lcar.getBrand()}"></td>
+                    <td th:text="${lcar.getModel()}"></td>
+                    <td th:text="${lcar.getSeries()}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

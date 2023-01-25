@@ -1,40 +1,30 @@
 package web.model;
 
-
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
-@Table(name = "user")
 public class User {
+
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    @Column(name = "name")
+    private Long id;
     private String name;
-    @Column(name = "lastName")
-    private String lastName;
-    @Column(name = "passportNum")
-    private String passportNum;
-    @Column(name = "age")
+    private String surname;
     private int age;
+    private Long number;
+    private String email;
 
     public User() {
     }
 
-    public User(int id, String name, String lastName, String passportNum, int age) {
-        this.id = id;
-        this.name = name;
-        this.lastName = lastName;
-        this.passportNum = passportNum;
-        this.age = age;
-    }
-
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -46,20 +36,20 @@ public class User {
         this.name = name;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getSurname() {
+        return surname;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
-    public String getPassportNum() {
-        return passportNum;
+    public String getEmail() {
+        return email;
     }
 
-    public void setPassportNum(String passportNum) {
-        this.passportNum = passportNum;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public int getAge() {
@@ -70,14 +60,11 @@ public class User {
         this.age = age;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", passportNum='" + passportNum + '\'' +
-                ", age=" + age +
-                '}';
+    public Long getNumber() {
+        return number;
+    }
+
+    public void setNumber(Long number) {
+        this.number = number;
     }
 }

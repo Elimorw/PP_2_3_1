@@ -1,15 +1,18 @@
 package web.dao;
 
-import org.hibernate.SessionFactory;
-import org.springframework.stereotype.Repository;
 import web.model.User;
 
 import java.util.List;
 
 public interface UserDao {
-    void addUser(User user);
-    void updateUser(User user);
-    void removeUser(int id);
-    User getUserById(int id);
-    List<User> listUser();
+
+    void saveUser(User user);
+
+    void removeUser(long id);
+
+    void updateUser(long id, User user);
+
+    List<User> getAllUsers();
+
+    User getUser(long id);
 }
